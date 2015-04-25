@@ -26,10 +26,13 @@ public final class Editor<T, ValidationError: ErrorType> {
 public final class EditableProperty<T, ValidationError: ErrorType>: PropertyType {
 	public typealias Value = Fact<T, ValidationError>
 
-	private let defaultValues: PropertyOf<T>
 	public let validationErrors: Signal<ValidationError, NoError>
-	public var editors: [Editor<T, ValidationError>]
+
+	private let defaultValues: PropertyOf<T>
+	private var editors: [Editor<T, ValidationError>]
 	
 	public init<P: PropertyType where P.Value == T>(defaultValues: P, editsTakePriority: Bool = false)
 	public init(defaultValue: T)
 }
+
+public func <~ <T, ValidationError: ErrorType>(property: EditableProperty<T, ValidationError>, editor: Editor<T, ValidationError>) -> Disposable
