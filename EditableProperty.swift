@@ -36,3 +36,6 @@ public final class EditableProperty<T, ValidationError: ErrorType>: PropertyType
 }
 
 public func <~ <T, ValidationError: ErrorType>(property: EditableProperty<T, ValidationError>, editor: Editor<T, ValidationError>) -> Disposable
+
+extension EditableProperty: MutablePropertyType {
+}
