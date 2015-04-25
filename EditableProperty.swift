@@ -17,6 +17,8 @@ public func == <T: Equatable, ErrorA, ErrorB>(lhs: Validated<T, ErrorA>, rhs: Va
 
 public final class Editor<T, ValidationError: ErrorType> {
 	public let edits: SignalProducer<Signal<T, NoError>, NoError>
+
+	public init(edits: SignalProducer<Signal<T, NoError>, NoError>, commit: (Fact<T>, T) -> SignalProducer<T, ValidationError>)
 	
 	public func commit(current: Fact<T>, proposed: T) -> SignalProducer<T, ValidationError>
 }
@@ -24,7 +26,10 @@ public final class Editor<T, ValidationError: ErrorType> {
 public final class EditableProperty<T, ValidationError: ErrorType>: PropertyType {
 	public typealias Value = Fact<T, ValidationError>
 
-	public let defaultValues: PropertyOf<T>
+	private let defaultValues: PropertyOf<T>
 	public let validationErrors: Signal<ValidationError, NoError>
 	public var editors: [Editor<T, ValidationError>]
+	
+	public init<P: PropertyType where P.Value == T>(defaultValues: P, editsTakePriority: Bool = false)
+	public init(defaultValue: T)
 }
