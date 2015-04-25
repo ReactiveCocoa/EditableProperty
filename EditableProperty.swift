@@ -1,3 +1,5 @@
+import ReactiveCocoa
+
 /// Represents a value of type T that has been validated for use in an
 /// EditableProperty.
 public struct Validated<T, ValidationError: ErrorType> {
@@ -13,16 +15,16 @@ public struct Validated<T, ValidationError: ErrorType> {
 
 public func == <T: Equatable, ErrorA, ErrorB>(lhs: Validated<T, ErrorA>, rhs: Validated<T, ErrorB>) -> Bool
 
-final class Editor<T, ValidationError: ErrorType> {
-	let edits: SignalProducer<Signal<T, NoError>, NoError>
+public final class Editor<T, ValidationError: ErrorType> {
+	public let edits: SignalProducer<Signal<T, NoError>, NoError>
 	
-	func commit(current: Fact<T>, proposed: T) -> SignalProducer<T, ValidationError>
+	public func commit(current: Fact<T>, proposed: T) -> SignalProducer<T, ValidationError>
 }
 
-final class EditableProperty<T, ValidationError: ErrorType> {
-	typealias Value = Fact<T, ValidationError>
+public final class EditableProperty<T, ValidationError: ErrorType>: PropertyType {
+	public typealias Value = Fact<T, ValidationError>
 
-	let defaultValues: PropertyOf<T>
-	let validationErrors: Signal<ValidationError, NoError>
-	var editors: [Editor<T, ValidationError>]
+	public let defaultValues: PropertyOf<T>
+	public let validationErrors: Signal<ValidationError, NoError>
+	public var editors: [Editor<T, ValidationError>]
 }
