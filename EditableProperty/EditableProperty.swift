@@ -11,13 +11,13 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 		return _committedValues.producer
 	}
 
+	private let validationErrorsSink: Signal<ValidationError, NoError>.Observer
 	public let validationErrors: Signal<ValidationError, NoError>
 	
 	public init<P: PropertyType where P.Value == T>(defaultValues: P, editsTakePriority: Bool = false) {
 		// TODO: editsTakePriority
 
-		// TODO
-		self.validationErrors = .never
+		(validationErrors, validationErrorsSink) = Signal<ValidationError, NoError>.pipe()
 
 		_committedValues = MutableProperty(.DefaultValue(Box(defaultValues.value)))
 
@@ -47,6 +47,49 @@ extension EditableProperty: MutablePropertyType {
 	}
 }
 
-public func <~ <T, ValidationError: ErrorType>(property: EditableProperty<T, ValidationError>, editor: Editor<T, ValidationError>) -> Disposable {
-	return SimpleDisposable()
+public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Value, ValidationError>, editor: Editor<Value, ValidationError>) -> Disposable {
+	let committedValues = property.committedValues
+	let validationErrorsSink = property.validationErrorsSink
+
+	let validatedEdits = editor.edits
+		|> joinMap(.Latest) { session in
+			let sessionProducer = SignalProducer { observer, disposable in
+				disposable.addDisposable(session.observe(observer))
+			}
+
+			let sessionCompleted = sessionProducer
+				|> then(.empty)
+				|> catch { _ in .empty }
+
+			let validatedValues = committedValues
+				|> promoteErrors(ValidationError.self)
+				|> takeUntil(sessionCompleted)
+				|> combineLatestWith(sessionProducer)
+				|> joinMap(.Latest) { committed, proposed in
+					return editor.mergeCommittedValue(committed, intoProposedValue: proposed)
+				}
+				|> takeLast(1)
+
+			return SignalProducer { observer, disposable in
+				validatedValues.startWithSignal { signal, signalDisposable in
+					disposable.addDisposable(signalDisposable)
+
+					signal.observe(SinkOf { event in
+						switch event {
+						case let .Next(value):
+							sendNext(observer, value.unbox)
+
+						case let .Error(error):
+							sendNext(property.validationErrorsSink, error.unbox)
+
+						case .Interrupted, .Completed:
+							sendCompleted(observer)
+						}
+					})
+				}
+			}
+		}
+		|> map { .ValidatedEdit(Box($0), editor) }
+	
+	return property._committedValues <~ validatedEdits
 }
