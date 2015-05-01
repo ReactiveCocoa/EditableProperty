@@ -83,48 +83,62 @@ extension EditableProperty: MutablePropertyType {
 /// Returns a disposable which can be used to manually remove the editor from the
 /// property.
 public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Value, ValidationError>, editor: Editor<Value, ValidationError>) -> Disposable {
-	let committedValues = property._committedValue.producer
-	let validationErrorsSink = property.validationErrorsSink
-
 	let validatedEdits = editor.edits
-		|> flatMap(FlattenStrategy.Latest) { (session: Editor<Value, ValidationError>.EditSession) -> SignalProducer<Value, NoError> in
-			let sessionProducer = SignalProducer { observer, disposable in
-				disposable.addDisposable(session.observe(observer))
-			}
-
-			let sessionCompleted: SignalProducer<(), NoError> = sessionProducer
+		|> map(liftSignal)
+		// We only care about the latest edit.
+		|> flatMap(FlattenStrategy.Latest) { editSession -> SignalProducer<Value, NoError> in
+			let sessionCompleted: SignalProducer<(), NoError> = editSession
 				|> then(.empty)
 				|> catch { _ in .empty }
 
-			let validatedValues = committedValues
+			let committedValues = property._committedValue.producer
 				|> promoteErrors(ValidationError.self)
 				|> takeUntil(sessionCompleted)
-				|> combineLatestWith(sessionProducer)
+
+			return combineLatest(committedValues, editSession)
+				// We only care about the result of merging the latest values.
 				|> flatMap(.Latest) { committed, proposed in
 					return editor.mergeCommittedValue(committed, intoProposedValue: proposed)
 				}
+				// Wait until validation completes, then use the final value for
+				// the property's value. If the signal never sends anything,
+				// don't update the property.
 				|> takeLast(1)
-
-			return SignalProducer { observer, disposable in
-				validatedValues.startWithSignal { signal, signalDisposable in
-					disposable.addDisposable(signalDisposable)
-
-					signal.observe(SinkOf { event in
-						switch event {
-						case let .Next(value):
-							sendNext(observer, value.unbox)
-
-						case let .Error(error):
-							sendNext(property.validationErrorsSink, error.unbox)
-
-						case .Interrupted, .Completed:
-							sendCompleted(observer)
-						}
-					})
+				// If interrupted or errored, just complete (to cancel the edit).
+				|> ignoreInterruption
+				|> catch { error in
+					sendNext(property.validationErrorsSink, error)
+					return .empty
 				}
-			}
 		}
 		|> map { Committed<Value, ValidationError>.ValidatedEdit(Box($0), editor) }
 	
 	return property._committedValue <~ validatedEdits
+}
+
+/// Lifts a Signal to a SignalProducer.
+///
+/// This is a fundamentally unsafe operation, as no buffering is performed, and
+/// events may be missed. Use only in contexts where this is acceptable or
+/// impossible!
+private func liftSignal<T, Error>(signal: Signal<T, Error>) -> SignalProducer<T, Error> {
+	return SignalProducer { observer, disposable in
+		disposable.addDisposable(signal.observe(observer))
+	}
+}
+
+/// Ignores any Interrupted event on the input signal, translating it to
+/// Completed instead.
+private func ignoreInterruption<T, Error>(signal: Signal<T, Error>) -> Signal<T, Error> {
+	return Signal { observer in
+		return signal.observe(Signal.Observer { event in
+			switch event {
+			case .Interrupted:
+				sendCompleted(observer)
+
+			default:
+				observer.put(event)
+			}
+		})
+	}
 }

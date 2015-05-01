@@ -27,7 +27,7 @@ public final class Editor<Value, ValidationError: ErrorType> {
 	/// Asks the editor to merge its proposed value with the most recent
 	/// validated value that was actually committed to the property.
 	///
-	/// The property will take the values of the returned producer, unless
+	/// The property will take the final value of the returned producer, unless
 	/// another value is proposed by this editor first, or another editor
 	/// commits a validated value.
 	public func mergeCommittedValue(committedValue: Committed<Value, ValidationError>, intoProposedValue proposedValue: Value) -> SignalProducer<Value, ValidationError> {
