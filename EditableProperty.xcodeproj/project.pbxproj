@@ -10,6 +10,10 @@
 		D00E598B1AF3FFA3000DAF8A /* Committed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E59891AF3FFA3000DAF8A /* Committed.swift */; };
 		D00E598C1AF3FFA3000DAF8A /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598A1AF3FFA3000DAF8A /* Editor.swift */; };
 		D00E59901AF404E5000DAF8A /* EditablePropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */; };
+		D00E59921AF406E3000DAF8A /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EC1AF36C140047F5AE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D00E59931AF406E4000DAF8A /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EB1AF36C140047F5AE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D00E59941AF406E7000DAF8A /* LlamaKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E71AF36C090047F5AE /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D00E59951AF406E9000DAF8A /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D03A80AB1AF36BD70047F5AE /* EditableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A80AA1AF36BD70047F5AE /* EditableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D03A80B11AF36BD70047F5AE /* EditableProperty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80A51AF36BD70047F5AE /* EditableProperty.framework */; };
 		D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80C11AF36BF10047F5AE /* EditableProperty.swift */; };
@@ -28,6 +32,23 @@
 			remoteInfo = EditableProperty;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D00E59911AF406DA000DAF8A /* Copy Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D00E59921AF406E3000DAF8A /* Quick.framework in Copy Frameworks */,
+				D00E59931AF406E4000DAF8A /* Nimble.framework in Copy Frameworks */,
+				D00E59941AF406E7000DAF8A /* LlamaKit.framework in Copy Frameworks */,
+				D00E59951AF406E9000DAF8A /* ReactiveCocoa.framework in Copy Frameworks */,
+			);
+			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		D00E59891AF3FFA3000DAF8A /* Committed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Committed.swift; sourceTree = "<group>"; };
@@ -315,6 +336,7 @@
 				D03A80AC1AF36BD70047F5AE /* Sources */,
 				D03A80AD1AF36BD70047F5AE /* Frameworks */,
 				D03A80AE1AF36BD70047F5AE /* Resources */,
+				D00E59911AF406DA000DAF8A /* Copy Frameworks */,
 			);
 			buildRules = (
 			);
