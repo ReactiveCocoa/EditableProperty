@@ -1,0 +1,590 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		D03A80AB1AF36BD70047F5AE /* EditableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A80AA1AF36BD70047F5AE /* EditableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D03A80B11AF36BD70047F5AE /* EditableProperty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80A51AF36BD70047F5AE /* EditableProperty.framework */; };
+		D03A80B81AF36BD70047F5AE /* EditablePropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80B71AF36BD70047F5AE /* EditablePropertyTests.swift */; };
+		D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80C11AF36BF10047F5AE /* EditableProperty.swift */; };
+		D03A80E91AF36C090047F5AE /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E71AF36C090047F5AE /* LlamaKit.framework */; };
+		D03A80EA1AF36C090047F5AE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */; };
+		D03A80ED1AF36C140047F5AE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EB1AF36C140047F5AE /* Nimble.framework */; };
+		D03A80EE1AF36C140047F5AE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EC1AF36C140047F5AE /* Quick.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D03A80B21AF36BD70047F5AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D03A809C1AF36BD70047F5AE /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D03A80A41AF36BD70047F5AE;
+			remoteInfo = EditableProperty;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		D03A80A51AF36BD70047F5AE /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03A80A91AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D03A80AA1AF36BD70047F5AE /* EditableProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditableProperty.h; sourceTree = "<group>"; };
+		D03A80B01AF36BD70047F5AE /* EditablePropertyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditablePropertyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03A80B61AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D03A80B71AF36BD70047F5AE /* EditablePropertyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditablePropertyTests.swift; sourceTree = "<group>"; };
+		D03A80C11AF36BF10047F5AE /* EditableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableProperty.swift; sourceTree = "<group>"; };
+		D03A80C51AF36BFC0047F5AE /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
+		D03A80C71AF36BFC0047F5AE /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
+		D03A80C81AF36BFC0047F5AE /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
+		D03A80C91AF36BFC0047F5AE /* Release.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Release.xcconfig; sourceTree = "<group>"; };
+		D03A80CA1AF36BFC0047F5AE /* Test.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Test.xcconfig; sourceTree = "<group>"; };
+		D03A80CC1AF36BFC0047F5AE /* Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Application.xcconfig; sourceTree = "<group>"; };
+		D03A80CD1AF36BFC0047F5AE /* Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Framework.xcconfig; sourceTree = "<group>"; };
+		D03A80CE1AF36BFC0047F5AE /* StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = StaticLibrary.xcconfig; sourceTree = "<group>"; };
+		D03A80D21AF36BFC0047F5AE /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = "<group>"; };
+		D03A80D31AF36BFC0047F5AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		D03A80D41AF36BFC0047F5AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		D03A80D51AF36BFC0047F5AE /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
+		D03A80D71AF36BFC0047F5AE /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = LlamaKit.framework; sourceTree = "<group>"; };
+		D03A80D81AF36BFC0047F5AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Nimble.framework; sourceTree = "<group>"; };
+		D03A80D91AF36BFC0047F5AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quick.framework; sourceTree = "<group>"; };
+		D03A80DA1AF36BFC0047F5AE /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ReactiveCocoa.framework; sourceTree = "<group>"; };
+		D03A80DC1AF36BFC0047F5AE /* iOS-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Application.xcconfig"; sourceTree = "<group>"; };
+		D03A80DD1AF36BFC0047F5AE /* iOS-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Base.xcconfig"; sourceTree = "<group>"; };
+		D03A80DE1AF36BFC0047F5AE /* iOS-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-Framework.xcconfig"; sourceTree = "<group>"; };
+		D03A80DF1AF36BFC0047F5AE /* iOS-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "iOS-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D03A80E11AF36BFC0047F5AE /* Mac-Application.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Application.xcconfig"; sourceTree = "<group>"; };
+		D03A80E21AF36BFC0047F5AE /* Mac-Base.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Base.xcconfig"; sourceTree = "<group>"; };
+		D03A80E31AF36BFC0047F5AE /* Mac-DynamicLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-DynamicLibrary.xcconfig"; sourceTree = "<group>"; };
+		D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
+		D03A80E51AF36BFC0047F5AE /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
+		D03A80E61AF36BFC0047F5AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		D03A80E71AF36C090047F5AE /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/Mac/LlamaKit.framework; sourceTree = SOURCE_ROOT; };
+		D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
+		D03A80EB1AF36C140047F5AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		D03A80EC1AF36C140047F5AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D03A80A11AF36BD70047F5AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03A80E91AF36C090047F5AE /* LlamaKit.framework in Frameworks */,
+				D03A80EA1AF36C090047F5AE /* ReactiveCocoa.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D03A80AD1AF36BD70047F5AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03A80B11AF36BD70047F5AE /* EditableProperty.framework in Frameworks */,
+				D03A80ED1AF36C140047F5AE /* Nimble.framework in Frameworks */,
+				D03A80EE1AF36C140047F5AE /* Quick.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		D03A809B1AF36BD70047F5AE = {
+			isa = PBXGroup;
+			children = (
+				D03A80A71AF36BD70047F5AE /* EditableProperty */,
+				D03A80B41AF36BD70047F5AE /* EditablePropertyTests */,
+				D03A80C31AF36BFC0047F5AE /* Configuration */,
+				D03A80A61AF36BD70047F5AE /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		D03A80A61AF36BD70047F5AE /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80A51AF36BD70047F5AE /* EditableProperty.framework */,
+				D03A80B01AF36BD70047F5AE /* EditablePropertyTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D03A80A71AF36BD70047F5AE /* EditableProperty */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80AA1AF36BD70047F5AE /* EditableProperty.h */,
+				D03A80C11AF36BF10047F5AE /* EditableProperty.swift */,
+				D03A80A81AF36BD70047F5AE /* Supporting Files */,
+			);
+			path = EditableProperty;
+			sourceTree = "<group>";
+		};
+		D03A80A81AF36BD70047F5AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80E71AF36C090047F5AE /* LlamaKit.framework */,
+				D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */,
+				D03A80A91AF36BD70047F5AE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D03A80B41AF36BD70047F5AE /* EditablePropertyTests */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80B71AF36BD70047F5AE /* EditablePropertyTests.swift */,
+				D03A80B51AF36BD70047F5AE /* Supporting Files */,
+			);
+			path = EditablePropertyTests;
+			sourceTree = "<group>";
+		};
+		D03A80B51AF36BD70047F5AE /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80EB1AF36C140047F5AE /* Nimble.framework */,
+				D03A80EC1AF36C140047F5AE /* Quick.framework */,
+				D03A80B61AF36BD70047F5AE /* Info.plist */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D03A80C31AF36BFC0047F5AE /* Configuration */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80C41AF36BFC0047F5AE /* Base */,
+				D03A80CF1AF36BFC0047F5AE /* Carthage */,
+				D03A80DB1AF36BFC0047F5AE /* iOS */,
+				D03A80E01AF36BFC0047F5AE /* Mac OS X */,
+				D03A80E61AF36BFC0047F5AE /* README.md */,
+			);
+			name = Configuration;
+			path = Carthage/Checkouts/xcconfigs;
+			sourceTree = "<group>";
+		};
+		D03A80C41AF36BFC0047F5AE /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80C51AF36BFC0047F5AE /* Common.xcconfig */,
+				D03A80C61AF36BFC0047F5AE /* Configurations */,
+				D03A80CB1AF36BFC0047F5AE /* Targets */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		D03A80C61AF36BFC0047F5AE /* Configurations */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80C71AF36BFC0047F5AE /* Debug.xcconfig */,
+				D03A80C81AF36BFC0047F5AE /* Profile.xcconfig */,
+				D03A80C91AF36BFC0047F5AE /* Release.xcconfig */,
+				D03A80CA1AF36BFC0047F5AE /* Test.xcconfig */,
+			);
+			path = Configurations;
+			sourceTree = "<group>";
+		};
+		D03A80CB1AF36BFC0047F5AE /* Targets */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80CC1AF36BFC0047F5AE /* Application.xcconfig */,
+				D03A80CD1AF36BFC0047F5AE /* Framework.xcconfig */,
+				D03A80CE1AF36BFC0047F5AE /* StaticLibrary.xcconfig */,
+			);
+			path = Targets;
+			sourceTree = "<group>";
+		};
+		D03A80CF1AF36BFC0047F5AE /* Carthage */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80D01AF36BFC0047F5AE /* Build */,
+			);
+			path = Carthage;
+			sourceTree = "<group>";
+		};
+		D03A80D01AF36BFC0047F5AE /* Build */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80D11AF36BFC0047F5AE /* iOS */,
+				D03A80D61AF36BFC0047F5AE /* Mac */,
+			);
+			path = Build;
+			sourceTree = "<group>";
+		};
+		D03A80D11AF36BFC0047F5AE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80D21AF36BFC0047F5AE /* LlamaKit.framework */,
+				D03A80D31AF36BFC0047F5AE /* Nimble.framework */,
+				D03A80D41AF36BFC0047F5AE /* Quick.framework */,
+				D03A80D51AF36BFC0047F5AE /* ReactiveCocoa.framework */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D03A80D61AF36BFC0047F5AE /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80D71AF36BFC0047F5AE /* LlamaKit.framework */,
+				D03A80D81AF36BFC0047F5AE /* Nimble.framework */,
+				D03A80D91AF36BFC0047F5AE /* Quick.framework */,
+				D03A80DA1AF36BFC0047F5AE /* ReactiveCocoa.framework */,
+			);
+			path = Mac;
+			sourceTree = "<group>";
+		};
+		D03A80DB1AF36BFC0047F5AE /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80DC1AF36BFC0047F5AE /* iOS-Application.xcconfig */,
+				D03A80DD1AF36BFC0047F5AE /* iOS-Base.xcconfig */,
+				D03A80DE1AF36BFC0047F5AE /* iOS-Framework.xcconfig */,
+				D03A80DF1AF36BFC0047F5AE /* iOS-StaticLibrary.xcconfig */,
+			);
+			path = iOS;
+			sourceTree = "<group>";
+		};
+		D03A80E01AF36BFC0047F5AE /* Mac OS X */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80E11AF36BFC0047F5AE /* Mac-Application.xcconfig */,
+				D03A80E21AF36BFC0047F5AE /* Mac-Base.xcconfig */,
+				D03A80E31AF36BFC0047F5AE /* Mac-DynamicLibrary.xcconfig */,
+				D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */,
+				D03A80E51AF36BFC0047F5AE /* Mac-StaticLibrary.xcconfig */,
+			);
+			path = "Mac OS X";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D03A80A21AF36BD70047F5AE /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03A80AB1AF36BD70047F5AE /* EditableProperty.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D03A80A41AF36BD70047F5AE /* EditableProperty */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D03A80BB1AF36BD70047F5AE /* Build configuration list for PBXNativeTarget "EditableProperty" */;
+			buildPhases = (
+				D03A80A01AF36BD70047F5AE /* Sources */,
+				D03A80A11AF36BD70047F5AE /* Frameworks */,
+				D03A80A21AF36BD70047F5AE /* Headers */,
+				D03A80A31AF36BD70047F5AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = EditableProperty;
+			productName = EditableProperty;
+			productReference = D03A80A51AF36BD70047F5AE /* EditableProperty.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D03A80AF1AF36BD70047F5AE /* EditablePropertyTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D03A80BE1AF36BD70047F5AE /* Build configuration list for PBXNativeTarget "EditablePropertyTests" */;
+			buildPhases = (
+				D03A80AC1AF36BD70047F5AE /* Sources */,
+				D03A80AD1AF36BD70047F5AE /* Frameworks */,
+				D03A80AE1AF36BD70047F5AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D03A80B31AF36BD70047F5AE /* PBXTargetDependency */,
+			);
+			name = EditablePropertyTests;
+			productName = EditablePropertyTests;
+			productReference = D03A80B01AF36BD70047F5AE /* EditablePropertyTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D03A809C1AF36BD70047F5AE /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0630;
+				ORGANIZATIONNAME = ReactiveCocoa;
+				TargetAttributes = {
+					D03A80A41AF36BD70047F5AE = {
+						CreatedOnToolsVersion = 6.3;
+					};
+					D03A80AF1AF36BD70047F5AE = {
+						CreatedOnToolsVersion = 6.3;
+					};
+				};
+			};
+			buildConfigurationList = D03A809F1AF36BD70047F5AE /* Build configuration list for PBXProject "EditableProperty" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = D03A809B1AF36BD70047F5AE;
+			productRefGroup = D03A80A61AF36BD70047F5AE /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D03A80A41AF36BD70047F5AE /* EditableProperty */,
+				D03A80AF1AF36BD70047F5AE /* EditablePropertyTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D03A80A31AF36BD70047F5AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D03A80AE1AF36BD70047F5AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D03A80A01AF36BD70047F5AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D03A80AC1AF36BD70047F5AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D03A80B81AF36BD70047F5AE /* EditablePropertyTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D03A80B31AF36BD70047F5AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D03A80A41AF36BD70047F5AE /* EditableProperty */;
+			targetProxy = D03A80B21AF36BD70047F5AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		D03A80B91AF36BD70047F5AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80C71AF36BFC0047F5AE /* Debug.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D03A80BA1AF36BD70047F5AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80C91AF36BFC0047F5AE /* Release.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D03A80BC1AF36BD70047F5AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D03A80BD1AF36BD70047F5AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D03A80BF1AF36BD70047F5AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E11AF36BFC0047F5AE /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		D03A80C01AF36BD70047F5AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E11AF36BFC0047F5AE /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		D03A80EF1AF36C2D0047F5AE /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80C81AF36BFC0047F5AE /* Profile.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Profile;
+		};
+		D03A80F01AF36C2D0047F5AE /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Profile;
+		};
+		D03A80F11AF36C2D0047F5AE /* Profile */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E11AF36BFC0047F5AE /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Profile;
+		};
+		D03A80F21AF36C310047F5AE /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80CA1AF36BFC0047F5AE /* Test.xcconfig */;
+			buildSettings = {
+				CURRENT_PROJECT_VERSION = 1;
+				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Test;
+		};
+		D03A80F31AF36C310047F5AE /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
+			buildSettings = {
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				FRAMEWORK_VERSION = A;
+				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Test;
+		};
+		D03A80F41AF36C310047F5AE /* Test */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D03A80E11AF36BFC0047F5AE /* Mac-Application.xcconfig */;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+					"$(inherited)",
+					Carthage/Build/Mac,
+				);
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Test;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D03A809F1AF36BD70047F5AE /* Build configuration list for PBXProject "EditableProperty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D03A80B91AF36BD70047F5AE /* Debug */,
+				D03A80F21AF36C310047F5AE /* Test */,
+				D03A80BA1AF36BD70047F5AE /* Release */,
+				D03A80EF1AF36C2D0047F5AE /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D03A80BB1AF36BD70047F5AE /* Build configuration list for PBXNativeTarget "EditableProperty" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D03A80BC1AF36BD70047F5AE /* Debug */,
+				D03A80F31AF36C310047F5AE /* Test */,
+				D03A80BD1AF36BD70047F5AE /* Release */,
+				D03A80F01AF36C2D0047F5AE /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D03A80BE1AF36BD70047F5AE /* Build configuration list for PBXNativeTarget "EditablePropertyTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D03A80BF1AF36BD70047F5AE /* Debug */,
+				D03A80F41AF36C310047F5AE /* Test */,
+				D03A80C01AF36BD70047F5AE /* Release */,
+				D03A80F11AF36C2D0047F5AE /* Profile */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D03A809C1AF36BD70047F5AE /* Project object */;
+}
