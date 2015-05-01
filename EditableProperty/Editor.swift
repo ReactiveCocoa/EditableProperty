@@ -5,7 +5,7 @@ import ReactiveCocoa
 ///
 /// Editors have identity, which is useful for ignoring an editor's own changes
 /// during property observation.
-public final class Editor<Value, ValidationError: ErrorType>: Equatable {
+public final class Editor<Value, ValidationError: ErrorType> {
 	/// Represents a single editing session. A signal of this type should send:
 	///
 	/// - .Next events as edits are proposed
@@ -22,7 +22,7 @@ public final class Editor<Value, ValidationError: ErrorType>: Equatable {
 	/// instance itself has been sent along the `edits` producer.
 	public let edits: SignalProducer<EditSession, NoError>
 
-	private let _mergeProposedValue: (Value, Validated<Value>) -> SignalProducer<Value, ValidationError>
+	private let _mergeCommittedValue: (Committed<Value, ValidationError>, Value) -> SignalProducer<Value, ValidationError>
 
 	/// Asks the editor to merge its proposed value with the most recent
 	/// validated value that was actually committed to the property.
@@ -30,24 +30,13 @@ public final class Editor<Value, ValidationError: ErrorType>: Equatable {
 	/// The property will take the values of the returned producer, unless
 	/// another value is proposed by this editor first, or another editor
 	/// commits a validated value.
-	public func mergeProposedValue(proposedValue: Value, withCommittedValue committedValue: Validated<Value>) -> SignalProducer<Value, ValidationError> {
-		return _mergeProposedValue(proposedValue, committedValue)
+	public func mergeCommittedValue(committedValue: Committed<Value, ValidationError>, intoProposedValue proposedValue: Value) -> SignalProducer<Value, ValidationError> {
+		return _mergeCommittedValue(committedValue, proposedValue)
 	}
 
 	/// Instantiates an editor with the given behaviors.
-	public init(edits: SignalProducer<EditSession, NoError>, mergeProposedValue: (Value, Validated<Value>) -> SignalProducer<Value, ValidationError>) {
+	public init(edits: SignalProducer<EditSession, NoError>, mergeCommittedValue: (Committed<Value, ValidationError>, Value) -> SignalProducer<Value, ValidationError>) {
 		self.edits = edits
-		self._mergeProposedValue = mergeProposedValue
-	}
-}
-
-/// Compares two editors for identity.
-public func == <Value, ValidationError>(lhs: Editor<Value, ValidationError>, rhs: Editor<Value, ValidationError>) -> Bool {
-	return lhs === rhs
-}
-
-extension Editor: Hashable {
-	public var hashValue: Int {
-		return ObjectIdentifier(self).hashValue
+		self._mergeCommittedValue = mergeCommittedValue
 	}
 }
