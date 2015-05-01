@@ -71,6 +71,12 @@ extension EditableProperty: MutablePropertyType {
 	}
 }
 
+extension EditableProperty: SinkType {
+	public func put(value: Value) {
+		self.value = value
+	}
+}
+
 /// Attaches an Editor to an EditableProperty, so that any edits will be
 /// reflected in the property's value once editing has finished and validation
 /// has succeeded.
