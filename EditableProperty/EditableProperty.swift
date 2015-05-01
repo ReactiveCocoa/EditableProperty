@@ -22,14 +22,14 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 	/// values while no edits have yet occurred.
 	///
 	/// If `editsTakePriority` is true, any edits will permanently override
-	/// `defaultValues`. Otherwise, new default values may replace
+	/// `defaultValue`. Otherwise, new default values may replace
 	/// user-initiated edits.
-	public init<P: PropertyType where P.Value == Value>(defaultValues: P, editsTakePriority: Bool) {
+	public init<P: PropertyType where P.Value == Value>(defaultValue: P, editsTakePriority: Bool) {
 		(validationErrors, validationErrorsSink) = Signal<ValidationError, NoError>.pipe()
 
-		_committedValue = MutableProperty(.DefaultValue(Box(defaultValues.value)))
+		_committedValue = MutableProperty(.DefaultValue(Box(defaultValue.value)))
 
-		var defaults = defaultValues.producer
+		var defaults = defaultValue.producer
 			|> map { Committed<Value, ValidationError>.DefaultValue(Box($0)) }
 
 		if editsTakePriority {
@@ -46,7 +46,7 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 
 	/// Initializes an editable property with the given default value.
 	public convenience init(_ defaultValue: Value) {
-		self.init(defaultValues: ConstantProperty(defaultValue), editsTakePriority: true)
+		self.init(defaultValue: ConstantProperty(defaultValue), editsTakePriority: true)
 	}
 
 	deinit {
