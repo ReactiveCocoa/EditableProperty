@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00E598B1AF3FFA3000DAF8A /* Committed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E59891AF3FFA3000DAF8A /* Committed.swift */; };
+		D00E598C1AF3FFA3000DAF8A /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598A1AF3FFA3000DAF8A /* Editor.swift */; };
 		D03A80AB1AF36BD70047F5AE /* EditableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A80AA1AF36BD70047F5AE /* EditableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D03A80B11AF36BD70047F5AE /* EditableProperty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80A51AF36BD70047F5AE /* EditableProperty.framework */; };
 		D03A80B81AF36BD70047F5AE /* EditablePropertyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80B71AF36BD70047F5AE /* EditablePropertyTests.swift */; };
@@ -28,6 +30,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D00E59891AF3FFA3000DAF8A /* Committed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Committed.swift; sourceTree = "<group>"; };
+		D00E598A1AF3FFA3000DAF8A /* Editor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		D03A80A51AF36BD70047F5AE /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03A80A91AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03A80AA1AF36BD70047F5AE /* EditableProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditableProperty.h; sourceTree = "<group>"; };
@@ -113,6 +117,8 @@
 			isa = PBXGroup;
 			children = (
 				D03A80AA1AF36BD70047F5AE /* EditableProperty.h */,
+				D00E59891AF3FFA3000DAF8A /* Committed.swift */,
+				D00E598A1AF3FFA3000DAF8A /* Editor.swift */,
 				D03A80C11AF36BF10047F5AE /* EditableProperty.swift */,
 				D03A80A81AF36BD70047F5AE /* Supporting Files */,
 			);
@@ -361,6 +367,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D00E598B1AF3FFA3000DAF8A /* Committed.swift in Sources */,
+				D00E598C1AF3FFA3000DAF8A /* Editor.swift in Sources */,
 				D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

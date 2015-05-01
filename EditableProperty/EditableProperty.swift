@@ -24,7 +24,7 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 	/// If `editsTakePriority` is true, any edits will permanently override
 	/// `defaultValues`. Otherwise, new default values may replace
 	/// user-initiated edits.
-	public init<P: PropertyType where P.Value == T>(defaultValues: P, editsTakePriority: Bool) {
+	public init<P: PropertyType where P.Value == Value>(defaultValues: P, editsTakePriority: Bool) {
 		(validationErrors, validationErrorsSink) = Signal<ValidationError, NoError>.pipe()
 
 		_committedValue = MutableProperty(.DefaultValue(Box(defaultValues.value)))
@@ -45,7 +45,7 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 	}
 
 	/// Initializes an editable property with the given default value.
-	public convenience init(_ defaultValue: T) {
+	public convenience init(_ defaultValue: Value) {
 		self.init(defaultValues: ConstantProperty(defaultValue), editsTakePriority: true)
 	}
 
@@ -87,12 +87,12 @@ public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Va
 	let validationErrorsSink = property.validationErrorsSink
 
 	let validatedEdits = editor.edits
-		|> joinMap(.Latest) { session in
+		|> flatMap(FlattenStrategy.Latest) { (session: Editor<Value, ValidationError>.EditSession) -> SignalProducer<Value, NoError> in
 			let sessionProducer = SignalProducer { observer, disposable in
 				disposable.addDisposable(session.observe(observer))
 			}
 
-			let sessionCompleted = sessionProducer
+			let sessionCompleted: SignalProducer<(), NoError> = sessionProducer
 				|> then(.empty)
 				|> catch { _ in .empty }
 
@@ -100,7 +100,7 @@ public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Va
 				|> promoteErrors(ValidationError.self)
 				|> takeUntil(sessionCompleted)
 				|> combineLatestWith(sessionProducer)
-				|> joinMap(.Latest) { committed, proposed in
+				|> flatMap(.Latest) { committed, proposed in
 					return editor.mergeCommittedValue(committed, intoProposedValue: proposed)
 				}
 				|> takeLast(1)
@@ -124,7 +124,7 @@ public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Va
 				}
 			}
 		}
-		|> map { .ValidatedEdit(Box($0), editor) }
+		|> map { Committed<Value, ValidationError>.ValidatedEdit(Box($0), editor) }
 	
 	return property._committedValue <~ validatedEdits
 }

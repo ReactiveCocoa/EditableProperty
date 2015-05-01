@@ -1,4 +1,5 @@
 import LlamaKit
+import ReactiveCocoa
 
 /// Represents a committed change to the value of an EditableProperty.
 public enum Committed<Value, ValidationError: ErrorType> {
@@ -41,16 +42,16 @@ public enum Committed<Value, ValidationError: ErrorType> {
 	}
 }
 
-public func == <Value: Equatable, ValidationError> (lhs: Committed<Value, ValidationError>, rhs: Committed<Value, ValidationError>) {
+public func == <Value: Equatable, ValidationError> (lhs: Committed<Value, ValidationError>, rhs: Committed<Value, ValidationError>) -> Bool {
 	switch (lhs, rhs) {
-	case let (.DefaultValue(left), .DefaultValue(right)):
-		return left == right
+	case (.DefaultValue, .DefaultValue), (.ExplicitUpdate, .ExplicitUpdate):
+		return lhs.value == rhs.value
 	
-	case let (.ExplicitUpdate(left), .ExplicitUpdate(right)):
-		return left == right
+	case let (.ValidatedEdit(_, left), .ValidatedEdit(_, right)):
+		return left === right && lhs.value == rhs.value
 	
-	case let (.ValidatedEdit(leftValue, leftEditor), .ValidatedEdit(rightValue, rightEditor)):
-		return leftEditor === rightEditor && leftValue == rightValue
+	default:
+		return false
 	}
 }
 
