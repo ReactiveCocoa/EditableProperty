@@ -1,43 +1,15 @@
 import ReactiveCocoa
 
-/// Represents a value of type T that has been validated for use in an
-/// EditableProperty.
-public struct Validated<T, ValidationError: ErrorType> {
-	/// The value that has been validated.
-	public let value: T
-	
-	/// The editor that validated the value, or nil if the value was a default
-	/// value (and thus no validation is necessary).
-	public let editor: Editor<T, ValidationError>?
-
-	private init(value: T, editor: Editor<T, ValidationError>?) {
-		self.value = value
-		self.editor = editor
+/// A property that editors can propose and commit changes to.
+///
+/// This can be used to implement multi-way bindings, where each "side" of the
+/// binding is a separate editor that ignores changes made by itself.
+public final class EditableProperty<Value, ValidationError: ErrorType>: MutablePropertyType {
+	public struct Edit {
+		public let value: Validated<Value>
 	}
-}
 
-public func == <T: Equatable, ErrorA, ErrorB>(lhs: Validated<T, ErrorA>, rhs: Validated<T, ErrorB>) -> Bool {
-	return lhs.value == rhs.value && lhs.editor === rhs.editor
-}
-
-public final class Editor<T, ValidationError: ErrorType> {
-	public typealias CommitFunction = (Validated<T, ValidationError>, T) -> SignalProducer<T, ValidationError>
-
-	public let edits: SignalProducer<Signal<T, NoError>, NoError>
-	private let _commit: CommitFunction
-
-	public init(edits: SignalProducer<Signal<T, NoError>, NoError>, commit: CommitFunction) {
-		self.edits = edits
-		self._commit = commit
-	}
-	
-	public func commit(current: Validated<T, ValidationError>, proposed: T) -> SignalProducer<T, ValidationError> {
-		return _commit(current, proposed)
-	}
-}
-
-public final class EditableProperty<T, ValidationError: ErrorType>: MutablePropertyType {
-	public typealias Value = Validated<T, ValidationError>
+	public let edits: SignalProducer<(Validated<Value>, Editor<Value, ValidationError>)
 
 	public let validationErrors: Signal<ValidationError, NoError>
 
