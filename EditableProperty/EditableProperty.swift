@@ -86,12 +86,12 @@ public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Va
 	let validatedEdits = editor.edits
 		|> map(liftSignal)
 		// We only care about the latest edit.
-		|> flatMap(FlattenStrategy.Latest) { editSession -> SignalProducer<Value, NoError> in
+		|> flatMap(FlattenStrategy.Latest) { [weak property] editSession -> SignalProducer<Value, NoError> in
 			let sessionCompleted: SignalProducer<(), NoError> = editSession
 				|> then(.empty)
 				|> catch { _ in .empty }
 
-			let committedValues = property._committedValue.producer
+			let committedValues = (property?._committedValue.producer ?? .empty)
 				|> promoteErrors(ValidationError.self)
 				|> takeUntil(sessionCompleted)
 
@@ -107,7 +107,10 @@ public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Va
 				// If interrupted or errored, just complete (to cancel the edit).
 				|> ignoreInterruption
 				|> catch { error in
-					sendNext(property.validationErrorsSink, error)
+					if let property = property {
+						sendNext(property.validationErrorsSink, error)
+					}
+
 					return .empty
 				}
 		}
