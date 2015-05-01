@@ -28,6 +28,17 @@ public enum Committed<Value, ValidationError: ErrorType> {
 			return value.unbox
 		}
 	}
+
+	/// Whether this change represents a user-initiated edit.
+	public var isEdit: Bool {
+		switch self {
+		case .ValidatedEdit:
+			return true
+
+		case .DefaultValue, .ExplicitUpdate:
+			return false
+		}
+	}
 }
 
 public func == <Value: Equatable, ValidationError> (lhs: Committed<Value, ValidationError>, rhs: Committed<Value, ValidationError>) {
