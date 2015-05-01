@@ -10,32 +10,55 @@ public struct Validated<T, ValidationError: ErrorType> {
 	/// value (and thus no validation is necessary).
 	public let editor: Editor<T, ValidationError>?
 
-	private init(value: T, editor: Editor<T, ValidationError>)
+	private init(value: T, editor: Editor<T, ValidationError>?) {
+		self.value = value
+		self.editor = editor
+	}
 }
 
-public func == <T: Equatable, ErrorA, ErrorB>(lhs: Validated<T, ErrorA>, rhs: Validated<T, ErrorB>) -> Bool
+public func == <T: Equatable, ErrorA, ErrorB>(lhs: Validated<T, ErrorA>, rhs: Validated<T, ErrorB>) -> Bool {
+	return lhs.value == rhs.value && lhs.editor === rhs.editor
+}
 
 public final class Editor<T, ValidationError: ErrorType> {
-	public let edits: SignalProducer<Signal<T, NoError>, NoError>
+	public typealias CommitFunction = (Validated<T, ValidationError>, T) -> SignalProducer<T, ValidationError>
 
-	public init(edits: SignalProducer<Signal<T, NoError>, NoError>, commit: (Fact<T>, T) -> SignalProducer<T, ValidationError>)
+	public let edits: SignalProducer<Signal<T, NoError>, NoError>
+	private let _commit: CommitFunction
+
+	public init(edits: SignalProducer<Signal<T, NoError>, NoError>, commit: CommitFunction) {
+		self.edits = edits
+		self._commit = commit
+	}
 	
-	public func commit(current: Fact<T>, proposed: T) -> SignalProducer<T, ValidationError>
+	public func commit(current: Validated<T, ValidationError>, proposed: T) -> SignalProducer<T, ValidationError> {
+		return _commit(current, proposed)
+	}
 }
 
-public final class EditableProperty<T, ValidationError: ErrorType>: PropertyType {
-	public typealias Value = Fact<T, ValidationError>
+public final class EditableProperty<T, ValidationError: ErrorType>: MutablePropertyType {
+	public typealias Value = Validated<T, ValidationError>
 
 	public let validationErrors: Signal<ValidationError, NoError>
 
 	private let defaultValues: PropertyOf<T>
-	private var editors: [Editor<T, ValidationError>]
+	private var editors: [Editor<T, ValidationError>] = []
+
+	public var value: Value
+	public let producer: SignalProducer<Value, NoError> = .empty
 	
-	public init<P: PropertyType where P.Value == T>(defaultValues: P, editsTakePriority: Bool = false)
-	public init(defaultValue: T)
+	public init<P: PropertyType where P.Value == T>(defaultValues: P, editsTakePriority: Bool = false) {
+		self.defaultValues = PropertyOf(defaultValues)
+		self.validationErrors = .never
+
+		self.value = Validated(value: self.defaultValues.value, editor: nil)
+	}
+
+	public convenience init(defaultValue: T) {
+		self.init(defaultValues: ConstantProperty(defaultValue))
+	}
 }
 
-public func <~ <T, ValidationError: ErrorType>(property: EditableProperty<T, ValidationError>, editor: Editor<T, ValidationError>) -> Disposable
-
-extension EditableProperty: MutablePropertyType {
+public func <~ <T, ValidationError: ErrorType>(property: EditableProperty<T, ValidationError>, editor: Editor<T, ValidationError>) -> Disposable {
+	return SimpleDisposable()
 }
