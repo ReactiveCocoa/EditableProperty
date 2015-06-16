@@ -14,23 +14,23 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D03A80A41AF36BD70047F5AE"
+               BlueprintIdentifier = "D8D608A31B2FCB7E0068D35B"
                BuildableName = "EditableProperty.framework"
-               BlueprintName = "EditableProperty"
+               BlueprintName = "EditableProperty-iOS"
                ReferencedContainer = "container:EditableProperty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "NO"
+            buildForRunning = "YES"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "NO">
+            buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D03A80AF1AF36BD70047F5AE"
-               BuildableName = "EditablePropertyTests.xctest"
-               BlueprintName = "EditablePropertyTests"
+               BlueprintIdentifier = "D8D608AD1B2FCB7F0068D35B"
+               BuildableName = "EditablePropertyTest-iOS.xctest"
+               BlueprintName = "EditablePropertyTest-iOS"
                ReferencedContainer = "container:EditableProperty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -46,9 +46,9 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "D03A80AF1AF36BD70047F5AE"
-               BuildableName = "EditablePropertyTests.xctest"
-               BlueprintName = "EditablePropertyTests"
+               BlueprintIdentifier = "D8D608AD1B2FCB7F0068D35B"
+               BuildableName = "EditablePropertyTest-iOS.xctest"
+               BlueprintName = "EditablePropertyTest-iOS"
                ReferencedContainer = "container:EditableProperty.xcodeproj">
             </BuildableReference>
          </TestableReference>
@@ -56,9 +56,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D03A80A41AF36BD70047F5AE"
+            BlueprintIdentifier = "D8D608A31B2FCB7E0068D35B"
             BuildableName = "EditableProperty.framework"
-            BlueprintName = "EditableProperty"
+            BlueprintName = "EditableProperty-iOS"
             ReferencedContainer = "container:EditableProperty.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -75,9 +75,9 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D03A80A41AF36BD70047F5AE"
+            BlueprintIdentifier = "D8D608A31B2FCB7E0068D35B"
             BuildableName = "EditableProperty.framework"
-            BlueprintName = "EditableProperty"
+            BlueprintName = "EditableProperty-iOS"
             ReferencedContainer = "container:EditableProperty.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
@@ -88,14 +88,14 @@
       shouldUseLaunchSchemeArgsEnv = "YES"
       savedToolIdentifier = ""
       useCustomWorkingDirectory = "NO"
-      buildConfiguration = "Profile"
+      buildConfiguration = "Release"
       debugDocumentVersioning = "YES">
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "D03A80A41AF36BD70047F5AE"
+            BlueprintIdentifier = "D8D608A31B2FCB7E0068D35B"
             BuildableName = "EditableProperty.framework"
-            BlueprintName = "EditableProperty"
+            BlueprintName = "EditableProperty-iOS"
             ReferencedContainer = "container:EditableProperty.xcodeproj">
          </BuildableReference>
       </MacroExpansion>

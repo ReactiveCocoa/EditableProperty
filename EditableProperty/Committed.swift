@@ -1,4 +1,4 @@
-import LlamaKit
+import Box
 import ReactiveCocoa
 
 /// Represents a committed change to the value of an EditableProperty.
@@ -20,13 +20,13 @@ public enum Committed<Value, ValidationError: ErrorType> {
 	public var value: Value {
 		switch self {
 		case let .DefaultValue(value):
-			return value.unbox
+			return value.value
 
 		case let .ExplicitUpdate(value):
-			return value.unbox
+			return value.value
 
 		case let .ValidatedEdit(value, _):
-			return value.unbox
+			return value.value
 		}
 	}
 
