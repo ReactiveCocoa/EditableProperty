@@ -23,12 +23,25 @@
 		D8D6089C1B2FCA710068D35B /* Box.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608961B2FC9D00068D35B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6089D1B2FCA710068D35B /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6089E1B2FCA710068D35B /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608971B2FC9D00068D35B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D8D608A91B2FCB7F0068D35B /* EditableProperty-iOS.h in Headers */ = {isa = PBXBuildFile; fileRef = D8D608A81B2FCB7F0068D35B /* EditableProperty-iOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8D608AF1B2FCB7F0068D35B /* EditableProperty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */; };
-		D8D608B61B2FCB7F0068D35B /* EditableProperty_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D8D608B51B2FCB7F0068D35B /* EditableProperty_iOSTests.swift */; };
 		D8D608C41B2FCC510068D35B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C11B2FCC510068D35B /* Box.framework */; };
 		D8D608C51B2FCC510068D35B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */; };
 		D8D608C61B2FCC510068D35B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C31B2FCC510068D35B /* Result.framework */; };
+		D8D608C91B2FCCDF0068D35B /* EditableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A80AA1AF36BD70047F5AE /* EditableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D8D608CA1B2FCCE50068D35B /* Committed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E59891AF3FFA3000DAF8A /* Committed.swift */; };
+		D8D608CB1B2FCCE50068D35B /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598A1AF3FFA3000DAF8A /* Editor.swift */; };
+		D8D608CC1B2FCCE50068D35B /* EditableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80C11AF36BF10047F5AE /* EditableProperty.swift */; };
+		D8D608CD1B2FCCF80068D35B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C11B2FCC510068D35B /* Box.framework */; };
+		D8D608CE1B2FCCF80068D35B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */; };
+		D8D608CF1B2FCCF80068D35B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C31B2FCC510068D35B /* Result.framework */; };
+		D8D608D01B2FCD020068D35B /* EditablePropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */; };
+		D8D608D41B2FCD3B0068D35B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608D21B2FCD3B0068D35B /* Nimble.framework */; };
+		D8D608D51B2FCD3B0068D35B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608D31B2FCD3B0068D35B /* Quick.framework */; };
+		D8D608D81B2FCDA90068D35B /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608C11B2FCC510068D35B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D608D91B2FCDA90068D35B /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D608DA1B2FCDA90068D35B /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608C31B2FCC510068D35B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D608DB1B2FCDA90068D35B /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608D21B2FCD3B0068D35B /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D608DC1B2FCDA90068D35B /* Quick.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608D31B2FCD3B0068D35B /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +75,20 @@
 				D00E59931AF406E4000DAF8A /* Nimble.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D8D608D71B2FCD910068D35B /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D8D608D81B2FCDA90068D35B /* Box.framework in CopyFiles */,
+				D8D608D91B2FCDA90068D35B /* ReactiveCocoa.framework in CopyFiles */,
+				D8D608DA1B2FCDA90068D35B /* Result.framework in CopyFiles */,
+				D8D608DB1B2FCDA90068D35B /* Nimble.framework in CopyFiles */,
+				D8D608DC1B2FCDA90068D35B /* Quick.framework in CopyFiles */,
+			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
@@ -108,14 +135,12 @@
 		D8D608971B2FC9D00068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = SOURCE_ROOT; };
 		D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D608A71B2FCB7F0068D35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8D608A81B2FCB7F0068D35B /* EditableProperty-iOS.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "EditableProperty-iOS.h"; sourceTree = "<group>"; };
 		D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTest-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D608B41B2FCB7F0068D35B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D8D608B51B2FCB7F0068D35B /* EditableProperty_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditableProperty_iOSTests.swift; sourceTree = "<group>"; };
 		D8D608C11B2FCC510068D35B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = SOURCE_ROOT; };
 		D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D8D608C31B2FCC510068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
+		D8D608D21B2FCD3B0068D35B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
+		D8D608D31B2FCD3B0068D35B /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -153,7 +178,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D608D41B2FCD3B0068D35B /* Nimble.framework in Frameworks */,
+				D8D608CD1B2FCCF80068D35B /* Box.framework in Frameworks */,
+				D8D608D51B2FCD3B0068D35B /* Quick.framework in Frameworks */,
+				D8D608CE1B2FCCF80068D35B /* ReactiveCocoa.framework in Frameworks */,
 				D8D608AF1B2FCB7F0068D35B /* EditableProperty.framework in Frameworks */,
+				D8D608CF1B2FCCF80068D35B /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -184,8 +214,6 @@
 				D03A80A71AF36BD70047F5AE /* EditableProperty */,
 				D03A80B41AF36BD70047F5AE /* EditablePropertyTests */,
 				D03A80C31AF36BFC0047F5AE /* Configuration */,
-				D8D608A51B2FCB7E0068D35B /* EditableProperty-iOS */,
-				D8D608B21B2FCB7F0068D35B /* EditableProperty-iOSTests */,
 				D03A80A61AF36BD70047F5AE /* Products */,
 			);
 			sourceTree = "<group>";
@@ -233,9 +261,9 @@
 		D03A80B51AF36BD70047F5AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D03A80EB1AF36C140047F5AE /* Nimble.framework */,
-				D03A80EC1AF36C140047F5AE /* Quick.framework */,
 				D03A80B61AF36BD70047F5AE /* Info.plist */,
+				D8D608D61B2FCD400068D35B /* iOS */,
+				D8D608D11B2FCD160068D35B /* Mac */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -346,40 +374,6 @@
 			path = "Mac OS X";
 			sourceTree = "<group>";
 		};
-		D8D608A51B2FCB7E0068D35B /* EditableProperty-iOS */ = {
-			isa = PBXGroup;
-			children = (
-				D8D608A81B2FCB7F0068D35B /* EditableProperty-iOS.h */,
-				D8D608A61B2FCB7E0068D35B /* Supporting Files */,
-			);
-			path = "EditableProperty-iOS";
-			sourceTree = "<group>";
-		};
-		D8D608A61B2FCB7E0068D35B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D8D608A71B2FCB7F0068D35B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		D8D608B21B2FCB7F0068D35B /* EditableProperty-iOSTests */ = {
-			isa = PBXGroup;
-			children = (
-				D8D608B51B2FCB7F0068D35B /* EditableProperty_iOSTests.swift */,
-				D8D608B31B2FCB7F0068D35B /* Supporting Files */,
-			);
-			path = "EditableProperty-iOSTests";
-			sourceTree = "<group>";
-		};
-		D8D608B31B2FCB7F0068D35B /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				D8D608B41B2FCB7F0068D35B /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		D8D608C71B2FCC5A0068D35B /* Mac */ = {
 			isa = PBXGroup;
 			children = (
@@ -400,6 +394,24 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
+		D8D608D11B2FCD160068D35B /* Mac */ = {
+			isa = PBXGroup;
+			children = (
+				D03A80EB1AF36C140047F5AE /* Nimble.framework */,
+				D03A80EC1AF36C140047F5AE /* Quick.framework */,
+			);
+			name = Mac;
+			sourceTree = "<group>";
+		};
+		D8D608D61B2FCD400068D35B /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				D8D608D21B2FCD3B0068D35B /* Nimble.framework */,
+				D8D608D31B2FCD3B0068D35B /* Quick.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -415,7 +427,7 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D608A91B2FCB7F0068D35B /* EditableProperty-iOS.h in Headers */,
+				D8D608C91B2FCCDF0068D35B /* EditableProperty.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -484,6 +496,7 @@
 				D8D608AA1B2FCB7F0068D35B /* Sources */,
 				D8D608AB1B2FCB7F0068D35B /* Frameworks */,
 				D8D608AC1B2FCB7F0068D35B /* Resources */,
+				D8D608D71B2FCD910068D35B /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -592,6 +605,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D8D608CB1B2FCCE50068D35B /* Editor.swift in Sources */,
+				D8D608CA1B2FCCE50068D35B /* Committed.swift in Sources */,
+				D8D608CC1B2FCCE50068D35B /* EditableProperty.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -599,7 +615,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D608B61B2FCB7F0068D35B /* EditableProperty_iOSTests.swift in Sources */,
+				D8D608D01B2FCD020068D35B /* EditablePropertySpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -847,7 +863,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -901,7 +917,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -954,7 +970,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1007,7 +1023,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOS/Info.plist";
+				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -1045,6 +1061,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
@@ -1061,7 +1078,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOSTests/Info.plist";
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = YES;
@@ -1097,6 +1114,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1106,7 +1124,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOSTests/Info.plist";
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1142,6 +1160,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1151,7 +1170,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOSTests/Info.plist";
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
@@ -1187,6 +1206,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
 				);
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1196,7 +1216,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				INFOPLIST_FILE = "EditableProperty-iOSTests/Info.plist";
+				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MTL_ENABLE_DEBUG_INFO = NO;
