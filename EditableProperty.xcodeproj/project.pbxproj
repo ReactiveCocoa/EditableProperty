@@ -12,15 +12,17 @@
 		D00E59901AF404E5000DAF8A /* EditablePropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */; };
 		D00E59921AF406E3000DAF8A /* Quick.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EC1AF36C140047F5AE /* Quick.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D00E59931AF406E4000DAF8A /* Nimble.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EB1AF36C140047F5AE /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D00E59941AF406E7000DAF8A /* LlamaKit.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E71AF36C090047F5AE /* LlamaKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
-		D00E59951AF406E9000DAF8A /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D03A80AB1AF36BD70047F5AE /* EditableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A80AA1AF36BD70047F5AE /* EditableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D03A80B11AF36BD70047F5AE /* EditableProperty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80A51AF36BD70047F5AE /* EditableProperty.framework */; };
 		D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80C11AF36BF10047F5AE /* EditableProperty.swift */; };
-		D03A80E91AF36C090047F5AE /* LlamaKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E71AF36C090047F5AE /* LlamaKit.framework */; };
-		D03A80EA1AF36C090047F5AE /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */; };
 		D03A80ED1AF36C140047F5AE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EB1AF36C140047F5AE /* Nimble.framework */; };
 		D03A80EE1AF36C140047F5AE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EC1AF36C140047F5AE /* Quick.framework */; };
+		D8D608981B2FC9D00068D35B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608961B2FC9D00068D35B /* Box.framework */; };
+		D8D608991B2FC9D00068D35B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608971B2FC9D00068D35B /* Result.framework */; };
+		D8D6089B1B2FCA060068D35B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */; };
+		D8D6089C1B2FCA710068D35B /* Box.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608961B2FC9D00068D35B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6089D1B2FCA710068D35B /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D8D6089E1B2FCA710068D35B /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608971B2FC9D00068D35B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,10 +42,11 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				D8D6089C1B2FCA710068D35B /* Box.framework in Copy Frameworks */,
+				D8D6089D1B2FCA710068D35B /* ReactiveCocoa.framework in Copy Frameworks */,
+				D8D6089E1B2FCA710068D35B /* Result.framework in Copy Frameworks */,
 				D00E59921AF406E3000DAF8A /* Quick.framework in Copy Frameworks */,
 				D00E59931AF406E4000DAF8A /* Nimble.framework in Copy Frameworks */,
-				D00E59941AF406E7000DAF8A /* LlamaKit.framework in Copy Frameworks */,
-				D00E59951AF406E9000DAF8A /* ReactiveCocoa.framework in Copy Frameworks */,
 			);
 			name = "Copy Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,10 +89,11 @@
 		D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-Framework.xcconfig"; sourceTree = "<group>"; };
 		D03A80E51AF36BFC0047F5AE /* Mac-StaticLibrary.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = "Mac-StaticLibrary.xcconfig"; sourceTree = "<group>"; };
 		D03A80E61AF36BFC0047F5AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
-		D03A80E71AF36C090047F5AE /* LlamaKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = LlamaKit.framework; path = Carthage/Build/Mac/LlamaKit.framework; sourceTree = SOURCE_ROOT; };
-		D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D03A80EB1AF36C140047F5AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		D03A80EC1AF36C140047F5AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
+		D8D608961B2FC9D00068D35B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/Mac/Box.framework; sourceTree = SOURCE_ROOT; };
+		D8D608971B2FC9D00068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = SOURCE_ROOT; };
+		D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,8 +101,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D03A80E91AF36C090047F5AE /* LlamaKit.framework in Frameworks */,
-				D03A80EA1AF36C090047F5AE /* ReactiveCocoa.framework in Frameworks */,
+				D8D608981B2FC9D00068D35B /* Box.framework in Frameworks */,
+				D8D6089B1B2FCA060068D35B /* ReactiveCocoa.framework in Frameworks */,
+				D8D608991B2FC9D00068D35B /* Result.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -158,6 +163,7 @@
 				D03A80AA1AF36BD70047F5AE /* EditableProperty.h */,
 				D00E598D1AF404B4000DAF8A /* API */,
 				D03A80A81AF36BD70047F5AE /* Supporting Files */,
+				D03A80A91AF36BD70047F5AE /* Info.plist */,
 			);
 			path = EditableProperty;
 			sourceTree = "<group>";
@@ -165,9 +171,9 @@
 		D03A80A81AF36BD70047F5AE /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D03A80E71AF36C090047F5AE /* LlamaKit.framework */,
-				D03A80E81AF36C090047F5AE /* ReactiveCocoa.framework */,
-				D03A80A91AF36BD70047F5AE /* Info.plist */,
+				D8D608961B2FC9D00068D35B /* Box.framework */,
+				D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */,
+				D8D608971B2FC9D00068D35B /* Result.framework */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -461,6 +467,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Carthage/Build/Mac,
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
@@ -477,6 +484,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Carthage/Build/Mac,
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
@@ -537,6 +545,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Carthage/Build/Mac,
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
@@ -580,6 +589,7 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					Carthage/Build/Mac,
+					"$(PROJECT_DIR)/Carthage/Build/Mac",
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;

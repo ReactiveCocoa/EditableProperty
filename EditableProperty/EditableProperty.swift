@@ -1,4 +1,4 @@
-import LlamaKit
+import Box
 import ReactiveCocoa
 
 /// A property of type `Value` that Editors can propose and commit changes to.
