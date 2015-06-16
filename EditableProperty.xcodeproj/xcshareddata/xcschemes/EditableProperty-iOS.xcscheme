@@ -22,15 +22,15 @@
          </BuildActionEntry>
          <BuildActionEntry
             buildForTesting = "YES"
-            buildForRunning = "YES"
+            buildForRunning = "NO"
             buildForProfiling = "NO"
             buildForArchiving = "NO"
-            buildForAnalyzing = "YES">
+            buildForAnalyzing = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8D608AD1B2FCB7F0068D35B"
-               BuildableName = "EditablePropertyTest-iOS.xctest"
-               BlueprintName = "EditablePropertyTest-iOS"
+               BuildableName = "EditablePropertyTests-iOS.xctest"
+               BlueprintName = "EditablePropertyTests-iOS"
                ReferencedContainer = "container:EditableProperty.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
@@ -47,8 +47,8 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D8D608AD1B2FCB7F0068D35B"
-               BuildableName = "EditablePropertyTest-iOS.xctest"
-               BlueprintName = "EditablePropertyTest-iOS"
+               BuildableName = "EditablePropertyTests-iOS.xctest"
+               BlueprintName = "EditablePropertyTests-iOS"
                ReferencedContainer = "container:EditableProperty.xcodeproj">
             </BuildableReference>
          </TestableReference>

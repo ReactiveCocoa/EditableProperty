@@ -489,9 +489,9 @@
 			productReference = D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		D8D608AD1B2FCB7F0068D35B /* EditablePropertyTest-iOS */ = {
+		D8D608AD1B2FCB7F0068D35B /* EditablePropertyTests-iOS */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D8D608BC1B2FCB7F0068D35B /* Build configuration list for PBXNativeTarget "EditablePropertyTest-iOS" */;
+			buildConfigurationList = D8D608BC1B2FCB7F0068D35B /* Build configuration list for PBXNativeTarget "EditablePropertyTests-iOS" */;
 			buildPhases = (
 				D8D608AA1B2FCB7F0068D35B /* Sources */,
 				D8D608AB1B2FCB7F0068D35B /* Frameworks */,
@@ -503,7 +503,7 @@
 			dependencies = (
 				D8D608B11B2FCB7F0068D35B /* PBXTargetDependency */,
 			);
-			name = "EditablePropertyTest-iOS";
+			name = "EditablePropertyTests-iOS";
 			productName = "EditableProperty-iOSTests";
 			productReference = D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
@@ -546,7 +546,7 @@
 				D03A80A41AF36BD70047F5AE /* EditableProperty-Mac */,
 				D03A80AF1AF36BD70047F5AE /* EditablePropertyTests-Mac */,
 				D8D608A31B2FCB7E0068D35B /* EditableProperty-iOS */,
-				D8D608AD1B2FCB7F0068D35B /* EditablePropertyTest-iOS */,
+				D8D608AD1B2FCB7F0068D35B /* EditablePropertyTests-iOS */,
 			);
 		};
 /* End PBXProject section */
@@ -992,7 +992,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D8D608BC1B2FCB7F0068D35B /* Build configuration list for PBXNativeTarget "EditablePropertyTest-iOS" */ = {
+		D8D608BC1B2FCB7F0068D35B /* Build configuration list for PBXNativeTarget "EditablePropertyTests-iOS" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D8D608BD1B2FCB7F0068D35B /* Debug */,
