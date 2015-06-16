@@ -100,7 +100,7 @@
 		D03A80A51AF36BD70047F5AE /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03A80A91AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03A80AA1AF36BD70047F5AE /* EditableProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditableProperty.h; sourceTree = "<group>"; };
-		D03A80B01AF36BD70047F5AE /* EditablePropertyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = EditablePropertyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D03A80B01AF36BD70047F5AE /* EditablePropertyTests-Mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTests-Mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03A80B61AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03A80C11AF36BF10047F5AE /* EditableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableProperty.swift; sourceTree = "<group>"; };
 		D03A80C51AF36BFC0047F5AE /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
@@ -222,7 +222,7 @@
 			isa = PBXGroup;
 			children = (
 				D03A80A51AF36BD70047F5AE /* EditableProperty.framework */,
-				D03A80B01AF36BD70047F5AE /* EditablePropertyTests.xctest */,
+				D03A80B01AF36BD70047F5AE /* EditablePropertyTests-Mac.xctest */,
 				D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */,
 				D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */,
 			);
@@ -468,7 +468,7 @@
 			);
 			name = "EditablePropertyTests-Mac";
 			productName = EditablePropertyTests;
-			productReference = D03A80B01AF36BD70047F5AE /* EditablePropertyTests.xctest */;
+			productReference = D03A80B01AF36BD70047F5AE /* EditablePropertyTests-Mac.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 		D8D608A31B2FCB7E0068D35B /* EditableProperty-iOS */ = {
@@ -990,6 +990,7 @@
 				D8D608BB1B2FCB7F0068D35B /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D8D608BC1B2FCB7F0068D35B /* Build configuration list for PBXNativeTarget "EditablePropertyTest-iOS" */ = {
 			isa = XCConfigurationList;
@@ -1000,6 +1001,7 @@
 				D8D608C01B2FCB7F0068D35B /* Profile */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
