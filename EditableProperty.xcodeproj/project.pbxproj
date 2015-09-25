@@ -135,7 +135,7 @@
 		D8D608971B2FC9D00068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = SOURCE_ROOT; };
 		D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTest-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D8D608AE1B2FCB7F0068D35B /* EditablePropertyTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D608C11B2FCC510068D35B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = SOURCE_ROOT; };
 		D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D8D608C31B2FCC510068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
@@ -224,7 +224,7 @@
 				D03A80A51AF36BD70047F5AE /* EditableProperty.framework */,
 				D03A80B01AF36BD70047F5AE /* EditablePropertyTests-Mac.xctest */,
 				D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */,
-				D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */,
+				D8D608AE1B2FCB7F0068D35B /* EditablePropertyTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -505,7 +505,7 @@
 			);
 			name = "EditablePropertyTests-iOS";
 			productName = "EditableProperty-iOSTests";
-			productReference = D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */;
+			productReference = D8D608AE1B2FCB7F0068D35B /* EditablePropertyTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -514,7 +514,9 @@
 		D03A809C1AF36BD70047F5AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ReactiveCocoa;
 				TargetAttributes = {
 					D03A80A41AF36BD70047F5AE = {
@@ -640,8 +642,11 @@
 			baseConfigurationReference = D03A80C71AF36BFC0047F5AE /* Debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -652,6 +657,7 @@
 			baseConfigurationReference = D03A80C91AF36BFC0047F5AE /* Release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -672,6 +678,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Debug;
@@ -689,6 +696,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Release;
@@ -705,6 +713,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -722,6 +731,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -731,6 +741,7 @@
 			baseConfigurationReference = D03A80C81AF36BFC0047F5AE /* Profile.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -751,6 +762,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Profile;
@@ -767,6 +779,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Profile;
@@ -776,6 +789,7 @@
 			baseConfigurationReference = D03A80CA1AF36BFC0047F5AE /* Test.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -796,6 +810,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Test;
@@ -812,6 +827,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -830,6 +846,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Debug;
@@ -847,6 +864,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Test;
@@ -864,6 +882,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Release;
@@ -881,6 +900,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Profile;
@@ -896,6 +916,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -911,6 +932,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Test;
@@ -926,6 +948,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -941,6 +964,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Profile;
