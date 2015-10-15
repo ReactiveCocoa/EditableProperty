@@ -8,7 +8,6 @@
 
 import Nimble
 import Quick
-
 import EditableProperty
 import ReactiveCocoa
 

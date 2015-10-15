@@ -17,27 +17,22 @@
 		D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80C11AF36BF10047F5AE /* EditableProperty.swift */; };
 		D03A80ED1AF36C140047F5AE /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EB1AF36C140047F5AE /* Nimble.framework */; };
 		D03A80EE1AF36C140047F5AE /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D03A80EC1AF36C140047F5AE /* Quick.framework */; };
-		D8D608981B2FC9D00068D35B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608961B2FC9D00068D35B /* Box.framework */; };
 		D8D608991B2FC9D00068D35B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608971B2FC9D00068D35B /* Result.framework */; };
 		D8D6089B1B2FCA060068D35B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */; };
-		D8D6089C1B2FCA710068D35B /* Box.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608961B2FC9D00068D35B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6089D1B2FCA710068D35B /* ReactiveCocoa.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D6089E1B2FCA710068D35B /* Result.framework in Copy Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608971B2FC9D00068D35B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D608AF1B2FCB7F0068D35B /* EditableProperty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */; };
-		D8D608C41B2FCC510068D35B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C11B2FCC510068D35B /* Box.framework */; };
 		D8D608C51B2FCC510068D35B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */; };
 		D8D608C61B2FCC510068D35B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C31B2FCC510068D35B /* Result.framework */; };
 		D8D608C91B2FCCDF0068D35B /* EditableProperty.h in Headers */ = {isa = PBXBuildFile; fileRef = D03A80AA1AF36BD70047F5AE /* EditableProperty.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D8D608CA1B2FCCE50068D35B /* Committed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E59891AF3FFA3000DAF8A /* Committed.swift */; };
 		D8D608CB1B2FCCE50068D35B /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598A1AF3FFA3000DAF8A /* Editor.swift */; };
 		D8D608CC1B2FCCE50068D35B /* EditableProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = D03A80C11AF36BF10047F5AE /* EditableProperty.swift */; };
-		D8D608CD1B2FCCF80068D35B /* Box.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C11B2FCC510068D35B /* Box.framework */; };
 		D8D608CE1B2FCCF80068D35B /* ReactiveCocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */; };
 		D8D608CF1B2FCCF80068D35B /* Result.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608C31B2FCC510068D35B /* Result.framework */; };
 		D8D608D01B2FCD020068D35B /* EditablePropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */; };
 		D8D608D41B2FCD3B0068D35B /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608D21B2FCD3B0068D35B /* Nimble.framework */; };
 		D8D608D51B2FCD3B0068D35B /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D8D608D31B2FCD3B0068D35B /* Quick.framework */; };
-		D8D608D81B2FCDA90068D35B /* Box.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608C11B2FCC510068D35B /* Box.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D608D91B2FCDA90068D35B /* ReactiveCocoa.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D608DA1B2FCDA90068D35B /* Result.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608C31B2FCC510068D35B /* Result.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		D8D608DB1B2FCDA90068D35B /* Nimble.framework in CopyFiles */ = {isa = PBXBuildFile; fileRef = D8D608D21B2FCD3B0068D35B /* Nimble.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
@@ -68,7 +63,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D8D6089C1B2FCA710068D35B /* Box.framework in Copy Frameworks */,
 				D8D6089D1B2FCA710068D35B /* ReactiveCocoa.framework in Copy Frameworks */,
 				D8D6089E1B2FCA710068D35B /* Result.framework in Copy Frameworks */,
 				D00E59921AF406E3000DAF8A /* Quick.framework in Copy Frameworks */,
@@ -83,7 +77,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				D8D608D81B2FCDA90068D35B /* Box.framework in CopyFiles */,
 				D8D608D91B2FCDA90068D35B /* ReactiveCocoa.framework in CopyFiles */,
 				D8D608DA1B2FCDA90068D35B /* Result.framework in CopyFiles */,
 				D8D608DB1B2FCDA90068D35B /* Nimble.framework in CopyFiles */,
@@ -131,12 +124,10 @@
 		D03A80E61AF36BFC0047F5AE /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		D03A80EB1AF36C140047F5AE /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/Mac/Nimble.framework; sourceTree = SOURCE_ROOT; };
 		D03A80EC1AF36C140047F5AE /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/Mac/Quick.framework; sourceTree = SOURCE_ROOT; };
-		D8D608961B2FC9D00068D35B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/Mac/Box.framework; sourceTree = SOURCE_ROOT; };
 		D8D608971B2FC9D00068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/Mac/Result.framework; sourceTree = SOURCE_ROOT; };
 		D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/Mac/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTest-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		D8D608C11B2FCC510068D35B /* Box.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Box.framework; path = Carthage/Build/iOS/Box.framework; sourceTree = SOURCE_ROOT; };
+		D8D608AE1B2FCB7F0068D35B /* EditablePropertyTests-iOS.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTests-iOS.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ReactiveCocoa.framework; path = Carthage/Build/iOS/ReactiveCocoa.framework; sourceTree = SOURCE_ROOT; };
 		D8D608C31B2FCC510068D35B /* Result.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Result.framework; path = Carthage/Build/iOS/Result.framework; sourceTree = SOURCE_ROOT; };
 		D8D608D21B2FCD3B0068D35B /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = SOURCE_ROOT; };
@@ -148,7 +139,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D608981B2FC9D00068D35B /* Box.framework in Frameworks */,
 				D8D6089B1B2FCA060068D35B /* ReactiveCocoa.framework in Frameworks */,
 				D8D608991B2FC9D00068D35B /* Result.framework in Frameworks */,
 			);
@@ -168,7 +158,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D8D608C41B2FCC510068D35B /* Box.framework in Frameworks */,
 				D8D608C51B2FCC510068D35B /* ReactiveCocoa.framework in Frameworks */,
 				D8D608C61B2FCC510068D35B /* Result.framework in Frameworks */,
 			);
@@ -179,7 +168,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D608D41B2FCD3B0068D35B /* Nimble.framework in Frameworks */,
-				D8D608CD1B2FCCF80068D35B /* Box.framework in Frameworks */,
 				D8D608D51B2FCD3B0068D35B /* Quick.framework in Frameworks */,
 				D8D608CE1B2FCCF80068D35B /* ReactiveCocoa.framework in Frameworks */,
 				D8D608AF1B2FCB7F0068D35B /* EditableProperty.framework in Frameworks */,
@@ -224,7 +212,7 @@
 				D03A80A51AF36BD70047F5AE /* EditableProperty.framework */,
 				D03A80B01AF36BD70047F5AE /* EditablePropertyTests-Mac.xctest */,
 				D8D608A41B2FCB7E0068D35B /* EditableProperty.framework */,
-				D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */,
+				D8D608AE1B2FCB7F0068D35B /* EditablePropertyTests-iOS.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -377,7 +365,6 @@
 		D8D608C71B2FCC5A0068D35B /* Mac */ = {
 			isa = PBXGroup;
 			children = (
-				D8D608961B2FC9D00068D35B /* Box.framework */,
 				D8D6089A1B2FCA060068D35B /* ReactiveCocoa.framework */,
 				D8D608971B2FC9D00068D35B /* Result.framework */,
 			);
@@ -387,7 +374,6 @@
 		D8D608C81B2FCC740068D35B /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				D8D608C11B2FCC510068D35B /* Box.framework */,
 				D8D608C21B2FCC510068D35B /* ReactiveCocoa.framework */,
 				D8D608C31B2FCC510068D35B /* Result.framework */,
 			);
@@ -505,7 +491,7 @@
 			);
 			name = "EditablePropertyTests-iOS";
 			productName = "EditableProperty-iOSTests";
-			productReference = D8D608AE1B2FCB7F0068D35B /* EditablePropertyTest-iOS.xctest */;
+			productReference = D8D608AE1B2FCB7F0068D35B /* EditablePropertyTests-iOS.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -514,7 +500,9 @@
 		D03A809C1AF36BD70047F5AE /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0630;
+				LastSwiftMigration = 0700;
+				LastSwiftUpdateCheck = 0700;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = ReactiveCocoa;
 				TargetAttributes = {
 					D03A80A41AF36BD70047F5AE = {
@@ -640,8 +628,11 @@
 			baseConfigurationReference = D03A80C71AF36BFC0047F5AE /* Debug.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				ENABLE_TESTABILITY = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
+				ONLY_ACTIVE_ARCH = YES;
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
@@ -652,6 +643,7 @@
 			baseConfigurationReference = D03A80C91AF36BFC0047F5AE /* Release.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -663,6 +655,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -672,6 +665,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Debug;
@@ -680,6 +674,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -689,6 +684,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Release;
@@ -705,6 +701,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -722,6 +719,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -731,6 +729,7 @@
 			baseConfigurationReference = D03A80C81AF36BFC0047F5AE /* Profile.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -742,6 +741,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -751,6 +751,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Profile;
@@ -767,6 +768,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Profile;
@@ -776,6 +778,7 @@
 			baseConfigurationReference = D03A80CA1AF36BFC0047F5AE /* Test.xcconfig */;
 			buildSettings = {
 				CURRENT_PROJECT_VERSION = 1;
+				GCC_NO_COMMON_BLOCKS = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				VERSIONING_SYSTEM = "apple-generic";
@@ -787,6 +790,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80E41AF36BFC0047F5AE /* Mac-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -796,6 +800,7 @@
 				);
 				FRAMEWORK_VERSION = A;
 				INFOPLIST_FILE = EditableProperty/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Test;
@@ -812,6 +817,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks @loader_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -821,6 +827,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80DE1AF36BFC0047F5AE /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -830,6 +837,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Debug;
@@ -838,6 +846,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80DE1AF36BFC0047F5AE /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -847,6 +856,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Test;
@@ -855,6 +865,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80DE1AF36BFC0047F5AE /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -864,6 +875,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Release;
@@ -872,6 +884,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = D03A80DE1AF36BFC0047F5AE /* iOS-Framework.xcconfig */;
 			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -881,6 +894,7 @@
 				);
 				INFOPLIST_FILE = "$(SRCROOT)/EditableProperty/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(PROJECT_NAME)";
 			};
 			name = Profile;
@@ -896,6 +910,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Debug;
@@ -911,6 +926,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Test;
@@ -926,6 +942,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
@@ -941,6 +958,7 @@
 				);
 				INFOPLIST_FILE = EditablePropertyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.ReactiveCocoa.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Profile;
