@@ -16,7 +16,8 @@ typealias TestEditor = Editor<Int, NoError>
 class EditablePropertySpec: QuickSpec {
 	override func spec() {
 		it("should do some binding magic") {
-			let defaultValue = MutableProperty(0)
+			let defaultValue
+            = MutableProperty(0)
 
 			let property = EditableProperty<Int, NoError>(defaultValue: defaultValue, editsTakePriority: false)
 			expect(property.value).to(equal(defaultValue.value))
@@ -33,13 +34,13 @@ class EditablePropertySpec: QuickSpec {
 
 			let tryEdit: Int -> () = { proposed in
 				let (editSignal, editSink) = TestEditor.EditSession.pipe()
-				sendNext(editsSink, editSignal)
+				editsSink.sendNext(editSignal)
 				expect(property.value).to(equal(defaultValue.value))
 
-				sendNext(editSink, proposed)
+				editSink.sendNext(proposed)
 				expect(property.value).to(equal(defaultValue.value))
 
-				sendCompleted(editSink)
+				editSink.sendCompleted()
 			}
 
 			tryEdit(2)
