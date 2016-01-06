@@ -7,8 +7,8 @@ import ReactiveCocoa
 public final class EditableProperty<Value, ValidationError: ErrorType> {
 	/// The current value of the property, along with information about how that
 	/// value was obtained.
-	public var committedValue: PropertyOf<Committed<Value, ValidationError>> {
-		return PropertyOf(_committedValue)
+	public var committedValue: AnyProperty<Committed<Value, ValidationError>> {
+		return AnyProperty(_committedValue)
 	}
 
 	private let _committedValue: MutableProperty<Committed<Value, ValidationError>>
@@ -49,7 +49,7 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 	}
 
 	deinit {
-		sendCompleted(validationErrorsSink)
+		validationErrorsSink.sendCompleted()
 	}
 }
 
@@ -107,7 +107,7 @@ public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Va
 				.ignoreInterruption()
 				.flatMapError { error in
 					if let property = property {
-						sendNext(property.validationErrorsSink, error)
+						property.validationErrorsSink.sendNext(error)
 					}
 
 					return .empty
@@ -137,10 +137,10 @@ private extension Signal {
 			return self.observe { event in
 				switch event {
 				case .Interrupted:
-					sendCompleted(observer)
+					observer.sendCompleted()
 					
 				default:
-					observer(event)
+					observer.action(event)
 				}
 			}
 		}

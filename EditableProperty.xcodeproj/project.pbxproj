@@ -87,7 +87,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		D00E59891AF3FFA3000DAF8A /* Committed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Committed.swift; sourceTree = "<group>"; };
+		D00E59891AF3FFA3000DAF8A /* Committed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Committed.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D00E598A1AF3FFA3000DAF8A /* Editor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
 		D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditablePropertySpec.swift; sourceTree = "<group>"; };
 		D03A80A51AF36BD70047F5AE /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,7 +95,7 @@
 		D03A80AA1AF36BD70047F5AE /* EditableProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditableProperty.h; sourceTree = "<group>"; };
 		D03A80B01AF36BD70047F5AE /* EditablePropertyTests-Mac.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "EditablePropertyTests-Mac.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03A80B61AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		D03A80C11AF36BF10047F5AE /* EditableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableProperty.swift; sourceTree = "<group>"; };
+		D03A80C11AF36BF10047F5AE /* EditableProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditableProperty.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D03A80C51AF36BFC0047F5AE /* Common.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Common.xcconfig; sourceTree = "<group>"; };
 		D03A80C71AF36BFC0047F5AE /* Debug.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Debug.xcconfig; sourceTree = "<group>"; };
 		D03A80C81AF36BFC0047F5AE /* Profile.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Profile.xcconfig; sourceTree = "<group>"; };
