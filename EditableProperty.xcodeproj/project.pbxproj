@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		833859A11C3EBBD500EE372F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833859A01C3EBBD500EE372F /* Operators.swift */; };
-		833859A21C3EBBD500EE372F /* Operators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 833859A01C3EBBD500EE372F /* Operators.swift */; };
 		D00E598B1AF3FFA3000DAF8A /* Committed.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E59891AF3FFA3000DAF8A /* Committed.swift */; };
 		D00E598C1AF3FFA3000DAF8A /* Editor.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598A1AF3FFA3000DAF8A /* Editor.swift */; };
 		D00E59901AF404E5000DAF8A /* EditablePropertySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */; };
@@ -89,10 +87,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		833859A01C3EBBD500EE372F /* Operators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Operators.swift; sourceTree = "<group>"; };
 		D00E59891AF3FFA3000DAF8A /* Committed.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Committed.swift; sourceTree = "<group>"; usesTabs = 1; };
 		D00E598A1AF3FFA3000DAF8A /* Editor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Editor.swift; sourceTree = "<group>"; };
-		D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditablePropertySpec.swift; sourceTree = "<group>"; usesTabs = 1; };
+		D00E598F1AF404E5000DAF8A /* EditablePropertySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditablePropertySpec.swift; sourceTree = "<group>"; };
 		D03A80A51AF36BD70047F5AE /* EditableProperty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = EditableProperty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D03A80A91AF36BD70047F5AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D03A80AA1AF36BD70047F5AE /* EditableProperty.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EditableProperty.h; sourceTree = "<group>"; };
@@ -187,7 +184,6 @@
 				D00E59891AF3FFA3000DAF8A /* Committed.swift */,
 				D00E598A1AF3FFA3000DAF8A /* Editor.swift */,
 				D03A80C11AF36BF10047F5AE /* EditableProperty.swift */,
-				833859A01C3EBBD500EE372F /* Operators.swift */,
 			);
 			name = API;
 			sourceTree = "<group>";
@@ -580,7 +576,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D00E598B1AF3FFA3000DAF8A /* Committed.swift in Sources */,
-				833859A11C3EBBD500EE372F /* Operators.swift in Sources */,
 				D00E598C1AF3FFA3000DAF8A /* Editor.swift in Sources */,
 				D03A80C21AF36BF10047F5AE /* EditableProperty.swift in Sources */,
 			);
@@ -599,7 +594,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D8D608CB1B2FCCE50068D35B /* Editor.swift in Sources */,
-				833859A21C3EBBD500EE372F /* Operators.swift in Sources */,
 				D8D608CA1B2FCCE50068D35B /* Committed.swift in Sources */,
 				D8D608CC1B2FCCE50068D35B /* EditableProperty.swift in Sources */,
 			);
