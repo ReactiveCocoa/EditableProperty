@@ -1,15 +1,15 @@
-import Box
 import ReactiveCocoa
+import Result
 
 /// A property of type `Value` that Editors can propose and commit changes to.
 ///
 /// This can be used to implement multi-way bindings, where each "side" of the
 /// binding is a separate editor that ignores changes made by itself.
-public final class EditableProperty<Value, ValidationError: ErrorType> {
+public final class EditableProperty<Value, ValidationError: ErrorType>: MutablePropertyType {
 	/// The current value of the property, along with information about how that
 	/// value was obtained.
-	public var committedValue: PropertyOf<Committed<Value, ValidationError>> {
-		return PropertyOf(_committedValue)
+	public var committedValue: AnyProperty<Committed<Value, ValidationError>> {
+		return AnyProperty(_committedValue)
 	}
 
 	private let _committedValue: MutableProperty<Committed<Value, ValidationError>>
@@ -27,18 +27,18 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 	public init<P: PropertyType where P.Value == Value>(defaultValue: P, editsTakePriority: Bool) {
 		(validationErrors, validationErrorsSink) = Signal<ValidationError, NoError>.pipe()
 
-		_committedValue = MutableProperty(.DefaultValue(Box(defaultValue.value)))
+		_committedValue = MutableProperty(.DefaultValue(defaultValue.value))
 
 		var defaults = defaultValue.producer
-			|> map { Committed<Value, ValidationError>.DefaultValue(Box($0)) }
+			.map { Committed<Value, ValidationError>.DefaultValue($0) }
 
 		if editsTakePriority {
 			let hasBeenEdited = _committedValue.producer
-				|> filter { $0.isEdit }
-				|> map { _ in () }
+				.filter { $0.isEdit }
+				.map { _ in () }
 
 			defaults = defaults
-				|> takeUntil(hasBeenEdited)
+				.takeUntil(hasBeenEdited)
 		}
 
 		_committedValue <~ defaults
@@ -49,31 +49,33 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 		self.init(defaultValue: ConstantProperty(defaultValue), editsTakePriority: true)
 	}
 
-	deinit {
-		sendCompleted(validationErrorsSink)
-	}
-}
-
-extension EditableProperty: MutablePropertyType {
 	public var value: Value {
 		get {
 			return _committedValue.value.value
 		}
 
 		set(value) {
-			_committedValue.value = .ExplicitUpdate(Box(value))
+			_committedValue.value = .ExplicitUpdate(value)
 		}
 	}
 
 	public var producer: SignalProducer<Value, NoError> {
 		return _committedValue.producer
-			|> map { $0.value }
+			.map { $0.value }
 	}
-}
 
-extension EditableProperty: SinkType {
-	public func put(value: Value) {
-		self.value = value
+	/// A signal that will send the property's changes over time,
+	/// then complete when the property has deinitialized.
+	public lazy var signal: Signal<Value, NoError> = { [unowned self] in
+		var extractedSignal: Signal<Value, NoError>!
+		self.producer.startWithSignal { signal, _ in
+			extractedSignal = signal
+		}
+		return extractedSignal
+	}()
+
+	deinit {
+		validationErrorsSink.sendCompleted()
 	}
 }
 
@@ -90,37 +92,37 @@ extension EditableProperty: SinkType {
 /// property.
 public func <~ <Value, ValidationError: ErrorType>(property: EditableProperty<Value, ValidationError>, editor: Editor<Value, ValidationError>) -> Disposable {
 	let validatedEdits = editor.edits
-		|> map(liftSignal)
+		.map(liftSignal)
 		// We only care about the latest edit.
-		|> flatMap(FlattenStrategy.Latest) { [weak property] editSession -> SignalProducer<Value, NoError> in
+		.flatMap(FlattenStrategy.Latest) { [weak property] editSession -> SignalProducer<Value, NoError> in
 			let sessionCompleted: SignalProducer<(), NoError> = editSession
-				|> then(.empty)
-				|> catch { _ in .empty }
+				.then(.empty)
+				.flatMapError { _ in .empty }
 
 			let committedValues = (property?._committedValue.producer ?? .empty)
-				|> promoteErrors(ValidationError.self)
-				|> takeUntil(sessionCompleted)
+				.promoteErrors(ValidationError.self)
+				.takeUntil(sessionCompleted)
 
 			return combineLatest(committedValues, editSession)
 				// We only care about the result of merging the latest values.
-				|> flatMap(.Latest) { committed, proposed in
+				.flatMap(FlattenStrategy.Latest) { committed, proposed in
 					return editor.mergeCommittedValue(committed, intoProposedValue: proposed)
 				}
 				// Wait until validation completes, then use the final value for
 				// the property's value. If the signal never sends anything,
 				// don't update the property.
-				|> takeLast(1)
+				.takeLast(1)
 				// If interrupted or errored, just complete (to cancel the edit).
-				|> ignoreInterruption
-				|> catch { error in
+				.ignoreInterruption()
+				.flatMapError { error in
 					if let property = property {
-						sendNext(property.validationErrorsSink, error)
+						property.validationErrorsSink.sendNext(error)
 					}
 
 					return .empty
 				}
 		}
-		|> map { Committed<Value, ValidationError>.ValidatedEdit(Box($0), editor) }
+		.map { Committed<Value, ValidationError>.ValidatedEdit($0, editor) }
 	
 	return property._committedValue <~ validatedEdits
 }
@@ -136,18 +138,26 @@ private func liftSignal<T, Error>(signal: Signal<T, Error>) -> SignalProducer<T,
 	}
 }
 
-/// Ignores any Interrupted event on the input signal, translating it to
-/// Completed instead.
-private func ignoreInterruption<T, Error>(signal: Signal<T, Error>) -> Signal<T, Error> {
-	return Signal { observer in
-		return signal.observe(Signal.Observer { event in
-			switch event {
-			case .Interrupted:
-				sendCompleted(observer)
-
-			default:
-				observer.put(event)
+private extension Signal {
+	/// Ignores any Interrupted event on the input signal, translating it to
+	/// Completed instead.
+	func ignoreInterruption() -> Signal<Value, Error> {
+		return Signal { observer in
+			return self.observe { event in
+				switch event {
+				case .Interrupted:
+					observer.sendCompleted()
+					
+				default:
+					observer.action(event)
+				}
 			}
-		})
+		}
+	}
+}
+
+private extension SignalProducer {
+	func ignoreInterruption() -> SignalProducer<Value, Error> {
+		return lift { $0.ignoreInterruption() }
 	}
 }
