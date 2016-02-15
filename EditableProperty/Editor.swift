@@ -1,4 +1,5 @@
 import ReactiveCocoa
+import Result
 
 /// Represents an editor that can propose changes to properties, and then commit
 /// those changes when editing has completed.

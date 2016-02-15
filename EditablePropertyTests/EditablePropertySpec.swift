@@ -9,6 +9,7 @@
 import Nimble
 import Quick
 import EditableProperty
+import Result
 import ReactiveCocoa
 
 typealias TestEditor = Editor<Int, NoError>

@@ -1,10 +1,11 @@
 import ReactiveCocoa
+import Result
 
 /// A property of type `Value` that Editors can propose and commit changes to.
 ///
 /// This can be used to implement multi-way bindings, where each "side" of the
 /// binding is a separate editor that ignores changes made by itself.
-public final class EditableProperty<Value, ValidationError: ErrorType> {
+public final class EditableProperty<Value, ValidationError: ErrorType>: MutablePropertyType {
 	/// The current value of the property, along with information about how that
 	/// value was obtained.
 	public var committedValue: AnyProperty<Committed<Value, ValidationError>> {
@@ -48,12 +49,6 @@ public final class EditableProperty<Value, ValidationError: ErrorType> {
 		self.init(defaultValue: ConstantProperty(defaultValue), editsTakePriority: true)
 	}
 
-	deinit {
-		validationErrorsSink.sendCompleted()
-	}
-}
-
-extension EditableProperty: MutablePropertyType {
 	public var value: Value {
 		get {
 			return _committedValue.value.value
@@ -67,6 +62,20 @@ extension EditableProperty: MutablePropertyType {
 	public var producer: SignalProducer<Value, NoError> {
 		return _committedValue.producer
 			.map { $0.value }
+	}
+
+	/// A signal that will send the property's changes over time,
+	/// then complete when the property has deinitialized.
+	public lazy var signal: Signal<Value, NoError> = { [unowned self] in
+		var extractedSignal: Signal<Value, NoError>!
+		self.producer.startWithSignal { signal, _ in
+			extractedSignal = signal
+		}
+		return extractedSignal
+	}()
+
+	deinit {
+		validationErrorsSink.sendCompleted()
 	}
 }
 
